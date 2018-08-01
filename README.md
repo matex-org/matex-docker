@@ -77,7 +77,7 @@ docker build -f dockerfiles/ubuntu/16.x/Dockerfile .
   * cd /matex/src/deeplearning/tensorflow/examples/glibc_after_2.19/MNIST_KERAS/
   * mpirun --allow-run-as-root -mca btl_vader_single_copy_mechanism none -np 4 python keras_lenet3.py
 
-## Multi-Container MaTEx Execution (IN PROGRESS)
+## Multi-Container MaTEx Execution (UNDER CONSTRUCTION)
 ==================================================================
 
 Container Cluster orchestration uses `docker-compose`
