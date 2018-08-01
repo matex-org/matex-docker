@@ -10,29 +10,29 @@ For more information see [Docker](https://www.docker.com/) and [Wikipedia](https
 The matex-docker project supports MaTEx executing in Docker, thus providing a single set of configurations
 and dependencies to build, ship, and run MaTEx on laptops, data center VMs, or the cloud.
 
-### Project Structure
+## Project Structure
 ==================================================================
 
 Here is a quick breakdown of how matex-docker is structured. All Dockerfiles are configured
 to support both single and multi-container MPI execution. Default is single container.
 
-# benchmarks
+### benchmarks
 
 MPI4PY benchmark scripts
 
-# dockerfiles
+### dockerfiles
 
 Dockerfile support for CentOS and Ubuntu
 
-# compose
+### compose
 
 Support for multi-container OpenMPI using SSH and [Docker Compose](https://docs.docker.com/compose/)
 
-# openmpi
+### openmpi
 
 User-specific OpenMPI configuration parameter files
 
-# ssh
+### ssh
 
 User-specific SSH configuration files
 
@@ -41,7 +41,7 @@ User-specific SSH configuration files
 
 MaTEx Docker must be build from the root of the repository
 
-# Example
+### Example
 docker build -f dockerfiles/ubuntu/16.x/Dockerfile .
 
 ## Single Container MaTEx Execution
@@ -104,7 +104,7 @@ The file defines an `mpi_head` and an `mpi_node`. Both containers run the same `
 The only difference is, that the `mpi_head` container exposes its SSH server to
 the host system, so you can log into it to start your MPI applications.
 
-# Usage
+### Usage
 
 The following command, run from the repository's directory, will start one `mpi_head` container and three `mpi_node` containers:
 
@@ -123,7 +123,7 @@ Breaking the above command down:
 2. run on 2 MPI ranks
 3. Command to run (NB: the Python script needs to import MPI bindings)
 
-# Testing
+### Testing
 
 You can spin up a docker-compose cluster, run a battery of MPI4py tests and remove the cluster using a recipe provided in the included Makefile (handy for development):
 
