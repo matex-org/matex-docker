@@ -16,30 +16,30 @@ and dependencies to build, ship, and run MaTEx on laptops, data center VMs, or t
 Here is a quick breakdown of how matex-docker is structured. All Dockerfiles are configured
 to support both single and multi-container MPI execution. Default is single container.
 
-### benchmarks
+**/benchmarks**
 
 MPI4PY benchmark scripts
 
-### dockerfiles
+**/dockerfiles**
 
 Dockerfile support for CentOS and Ubuntu
 
-### compose
+**/compose**
 
 Support for multi-container OpenMPI using SSH and [Docker Compose](https://docs.docker.com/compose/)
 
-### openmpi
+**/openmpi**
 
 User-specific OpenMPI configuration parameter files
 
-### ssh
+**/ssh**
 
 User-specific SSH configuration files
 
 ## Docker Build
 ==================================================================
 
-MaTEx Docker must be build from the root of the repository
+**IMPORTANT:** MaTEx Docker must be built from the root of the repository
 
 ### Example
 docker build -f dockerfiles/ubuntu/16.x/Dockerfile .
@@ -54,7 +54,9 @@ docker build -f dockerfiles/ubuntu/16.x/Dockerfile .
 
 **Build and Run Docker container**
 
-* docker build .
+* cd matex-docker
+* docker build -f DOCKERFILE_DIR/Dockerfile .
+  * For DOCKERFILE_DIR see example above
 * Once docker build is complete
   * docker images
 * Take note of the newest Image ID
