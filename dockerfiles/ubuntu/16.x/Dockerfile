@@ -38,11 +38,12 @@ RUN conda install python=3.5.2 -y
 
 RUN conda install pip
 RUN conda upgrade pip
+RUN pip install --upgrade pip
 
 USER ${USER}
 
 RUN pip install --user -U setuptools
-
+RUN pip install numpy
 
 # ------------------------------------------------------------
 # Install OpenMPI
