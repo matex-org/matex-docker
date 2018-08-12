@@ -42,7 +42,7 @@ User-specific SSH configuration files
 **IMPORTANT:** MaTEx Docker must be built from the root of the repository
 
 ### Example
-docker build -f dockerfiles/ubuntu/16.x/Dockerfile .
+docker build -t matex-github:latest -f dockerfiles/ubuntu/16.x/Dockerfile .
 
 ## Single Container MaTEx Execution
 ==================================================================
@@ -55,7 +55,7 @@ docker build -f dockerfiles/ubuntu/16.x/Dockerfile .
 **Build and Run Docker container**
 
 * cd matex-docker
-* docker build -f DOCKERFILE_DIR/Dockerfile .
+* docker build -t matex-github:latest -f DOCKERFILE_DIR/Dockerfile .
   * For DOCKERFILE_DIR see example above
 * Once docker build is complete
   * docker images
@@ -67,13 +67,10 @@ docker build -f dockerfiles/ubuntu/16.x/Dockerfile .
 
 * cd matex/src/deeplearning/tensorflow/cpu/py3.x/
 * source activate_mtx.sh
-* **VERIFY**
-  * From current directory, execute Python manually
-    * python
-    * import tensorflow as tf
-  * Expected Output
-    * If no errors or failures, then quit()
-* Execute MaTEx Example code (MNIST)
+
+**Test**
+
+* Execute MaTEx example code (MNIST)
   * cd /matex/src/deeplearning/tensorflow/examples/glibc_after_2.19/MNIST_KERAS/
   * mpirun --allow-run-as-root -mca btl_vader_single_copy_mechanism none -np 4 python keras_lenet3.py
 
